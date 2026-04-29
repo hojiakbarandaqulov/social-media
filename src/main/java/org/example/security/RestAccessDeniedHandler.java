@@ -12,8 +12,6 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.time.Instant;
-import java.util.Map;
 
 @Component
 public class RestAccessDeniedHandler implements AccessDeniedHandler {
@@ -34,11 +32,6 @@ public class RestAccessDeniedHandler implements AccessDeniedHandler {
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 
         ApiErrorResponse body = new ApiErrorResponse(
-                Instant.now(),
-                HttpStatus.FORBIDDEN.value(),
-                HttpStatus.FORBIDDEN.getReasonPhrase(),
-                "Ushbu amal uchun ruxsat yetarli emas.",
-                Map.of()
         );
         objectMapper.writeValue(response.getOutputStream(), body);
     }

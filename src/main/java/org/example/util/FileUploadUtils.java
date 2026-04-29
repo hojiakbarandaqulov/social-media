@@ -18,7 +18,6 @@ public final class FileUploadUtils {
         if (extensionIndex < 0) {
             return "";
         }
-
         return fileName.substring(extensionIndex);
     }
 }
