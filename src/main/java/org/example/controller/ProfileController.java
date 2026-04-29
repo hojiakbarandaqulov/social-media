@@ -12,6 +12,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,6 +57,7 @@ public class ProfileController {
             method = {RequestMethod.POST, RequestMethod.PATCH},
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE
     )
+    @PatchMapping("/me/avatar")
     public ResponseEntity<ProfileResponse> updateAvatar(
             @AuthenticationPrincipal CustomUserPrincipal principal,
             @RequestParam("file") MultipartFile file
