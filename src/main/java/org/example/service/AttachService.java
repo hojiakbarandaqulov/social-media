@@ -8,7 +8,7 @@ public interface AttachService {
 
     AttachDTO uploadFile(MultipartFile file);
 
-    Resource getResource(Long id);
+    Resource getResource(String id);
 
     void deleteByUrl(String attachUrl);
 }

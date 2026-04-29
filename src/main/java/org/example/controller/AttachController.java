@@ -38,7 +38,7 @@ public class AttachController {
 
     @Operation(summary = "Yuklangan faylni id orqali olish")
     @GetMapping("/{id}")
-    public ResponseEntity<Resource> getById(@PathVariable Long id) {
+    public ResponseEntity<Resource> getById(@PathVariable String id) {
         Resource resource = attachService.getResource(id);
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)

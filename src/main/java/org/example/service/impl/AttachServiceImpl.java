@@ -84,7 +84,7 @@ public class AttachServiceImpl implements AttachService {
     }
 
     @Override
-    public Resource getResource(Long id) {
+    public Resource getResource(String id) {
         Attach attach = getById(id);
 
         try {
@@ -105,21 +105,20 @@ public class AttachServiceImpl implements AttachService {
         if (!StringUtils.hasText(attachUrl) || !attachUrl.startsWith(PUBLIC_PREFIX)) {
             return;
         }
-
+/*
         String idValue = attachUrl.substring(PUBLIC_PREFIX.length());
         try {
-            Long id = Long.valueOf(idValue);
-            Attach attach = getById(id);
-            Files.deleteIfExists(uploadPath.resolve(attach.getPath()).normalize());
-            attachRepository.delete(attach);
+//            Attach attach = getById(id);
+//            Files.deleteIfExists(uploadPath.resolve(attach.getPath()).normalize());
+//            attachRepository.delete(attach);
         } catch (NumberFormatException ignored) {
             // no-op
         } catch (IOException ignored) {
             // no-op
-        }
+        }*/
     }
 
-    private Attach getById(Long id) {
+    private Attach getById(String id) {
         return attachRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Attach topilmadi."));
     }

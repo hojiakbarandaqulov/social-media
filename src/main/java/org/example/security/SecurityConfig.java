@@ -57,11 +57,8 @@ public class SecurityConfig {
                                 "/api/posts",
                                 "/api/posts/*",
                                 "/api/posts/*/comments",
-<<<<<<< HEAD
-                                "/api/attach/**"
-=======
+                                "/api/attach/**",
                                 "/api/files/uploads/**"
->>>>>>> 048d98a97a63f72eef6878406674d08776bd8fd3
                         ).permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
