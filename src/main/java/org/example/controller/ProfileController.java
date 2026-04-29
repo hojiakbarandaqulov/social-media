@@ -8,15 +8,25 @@ import org.example.dto.user.ProfileResponse;
 import org.example.dto.user.UpdateProfileRequest;
 import org.example.security.CustomUserPrincipal;
 import org.example.service.UserService;
+<<<<<<< HEAD
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
+=======
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+>>>>>>> 048d98a97a63f72eef6878406674d08776bd8fd3
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestMethod;
+=======
+>>>>>>> 048d98a97a63f72eef6878406674d08776bd8fd3
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -48,11 +58,15 @@ public class ProfileController {
     }
 
     @Operation(summary = "Joriy foydalanuvchi avatarini yuklash")
+<<<<<<< HEAD
     @RequestMapping(
             value = "/me/avatar",
             method = {RequestMethod.POST, RequestMethod.PATCH},
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE
     )
+=======
+    @PatchMapping("/me/avatar")
+>>>>>>> 048d98a97a63f72eef6878406674d08776bd8fd3
     public ResponseEntity<ProfileResponse> updateAvatar(
             @AuthenticationPrincipal CustomUserPrincipal principal,
             @RequestParam("file") MultipartFile file
