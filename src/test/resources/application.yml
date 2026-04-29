@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:social_media_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+
+app:
+  jwt:
+    secret: test-secret-key-with-at-least-32-chars
+    expiration: 86400000
+  storage:
+    upload-dir: build/test-uploads
+  bootstrap:
+    admin-full-name: Test Admin
+    admin-email: admin@test.local
+    admin-password: Admin12345
